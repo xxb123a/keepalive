@@ -10,4 +10,3 @@
         super.attachBaseContext(base);
         DaemonSDK.attachBaseContext(base);
     }
-}
