@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.palmax.daemon">
+
+    <instrumentation
+        android:name="com.fork.kp.ViInstrumentation"
+        android:targetPackage="${applicationId}"
+        android:targetProcesses="${applicationId},${applicationId}:daemon" />
+    <application>
+        <service
+            android:name="com.fork.kp.service.DaemonService"
+            android:exported="false"
+            android:process=":daemon"
+            android:stopWithTask="false" />
+        <service
+            android:name="com.fork.kp.service.MainService"
+            android:exported="false"
+            android:stopWithTask="false" />
+    </application>
+</manifest>
