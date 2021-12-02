@@ -17,6 +17,5 @@ allprojects {
 		}  
 }    
 dependencies {  
-    implementation 'com.github.xxb123a:keepalive:v1.0.0'  
-    implementation 'me.weishu:free_reflection:3.0.1'  
+    implementation 'com.github.xxb123a:keepalive:v1.0.0'   
 }
