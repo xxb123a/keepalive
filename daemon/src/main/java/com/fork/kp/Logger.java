@@ -21,18 +21,16 @@ import android.util.Log;
  * description :
  */
 public class Logger {
-    public static boolean logEnable = true;
+    public static boolean logEnable = false;
 
     public static void logd(String message) {
         if (logEnable) {
             Log.d("daemon : ", message);
-            System.out.println("daemon : "+message);
         }
     }
     public static void loge(String message) {
         if (logEnable) {
             Log.e("daemon : ", message);
-            System.out.println("daemon : "+message);
         }
     }
 }
