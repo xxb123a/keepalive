@@ -11,13 +11,12 @@
         DaemonSDK.attachBaseContext(base);
     }
 # 引用
-allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-}  
-dependencies {
+allprojects {  
+		repositories {  
+			maven { url 'https://jitpack.io' }  
+		}  
+}    
+dependencies {  
     implementation 'com.github.xxb123a:keepalive:v1.0.0'  
-    implementation 'me.weishu:free_reflection:3.0.1'
+    implementation 'me.weishu:free_reflection:3.0.1'  
 }
