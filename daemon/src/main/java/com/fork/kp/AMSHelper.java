@@ -56,11 +56,9 @@ public class AMSHelper {
         try {
             Class<?> cls = Class.forName("android.app.ActivityManagerNative");
             Object invoke = cls.getMethod("getDefault").invoke(cls);
-            System.out.println("remote -> 11111111");
             Field remoteField = invoke.getClass().getDeclaredField("mRemote");
             remoteField.setAccessible(true);
             mRemote = (IBinder) remoteField.get(invoke);
-            System.out.println("remote -> " + mRemote);
         } catch (Throwable th) {
             th.printStackTrace();
         }
