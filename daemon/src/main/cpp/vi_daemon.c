@@ -77,7 +77,18 @@ void restartProgress(JNIEnv *env)
     // void (*CallVoidMethod)(JNIEnv*, jobject, jmethodID, ...);
     (*env)->CallStaticVoidMethod(env, clazz, method);
 }
+void sleep_ms(unsigned int secs)
 
+{
+    struct timeval tval;
+
+    tval.tv_sec=secs/1000;
+
+    tval.tv_usec=(secs*1000)%1000000;
+
+    select(0,NULL,NULL,NULL,&tval);
+
+}
 //JNIEnv *env, jstring waitFile, jstring waitIndicatorFile
 void waitOtherFile(JNIEnv *env, jstring waitFile, jstring waitIndicatorFile)
 {
@@ -102,8 +113,8 @@ void waitOtherFile(JNIEnv *env, jstring waitFile, jstring waitIndicatorFile)
     char *wait_indicator_file = (char*)(*env)->GetStringUTFChars(env, waitIndicatorFile, 0);
     while ( open(wait_indicator_file, O_RDONLY) == -1 )
     {
-        sleep(1);
-        if ( ++retry_times >= 30 )
+        sleep_ms(100);
+        if ( ++retry_times >= 300 )
         {
 //            v8 = *env;
 //            v9 = waitIndicatorFile;
