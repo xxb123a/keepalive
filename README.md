@@ -16,7 +16,7 @@ allprojects {
 			...
 			maven { url 'https://jitpack.io' }
 		}
-	}
+}  
 dependencies {
     implementation 'com.github.xxb123a:keepalive:v1.0.0'
 }
