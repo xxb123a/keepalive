@@ -17,5 +17,5 @@ allprojects {
 		}  
 }    
 dependencies {  
-    implementation 'com.github.xxb123a:keepalive:1.0.3'   
+    implementation 'com.github.xxb123a:keepalive:v1.0.3'   
 }
